@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Spain 2026 — who owes what</title>
+<style>
+  :root {
+    color-scheme: light;
+    --surface-0: #f4f3f0;
+    --surface-1: #fcfcfb;
+    --border:    #e2e0da;
+    --border-strong: #cecabf;
+    --text-primary:   #0b0b0b;
+    --text-secondary: #52514e;
+    --text-muted:     #7c7a73;
+    --pos: #2a78d6;   /* is owed money */
+    --neg: #e34948;   /* owes money */
+    --axis: #cecabf;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --surface-0: #121211;
+      --surface-1: #1a1a19;
+      --border:    #302f2c;
+      --border-strong: #45443f;
+      --text-primary:   #ffffff;
+      --text-secondary: #c3c2b7;
+      --text-muted:     #918f85;
+      --pos: #3987e5;
+      --neg: #e66767;
+      --axis: #45443f;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --surface-0: #121211;
+    --surface-1: #1a1a19;
+    --border:    #302f2c;
+    --border-strong: #45443f;
+    --text-primary:   #ffffff;
+    --text-secondary: #c3c2b7;
+    --text-muted:     #918f85;
+    --pos: #3987e5;
+    --neg: #e66767;
+    --axis: #45443f;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0 16px 64px;
+    background: var(--surface-0);
+    color: var(--text-primary);
+    font: 15px/1.5 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+
+  header { padding: 40px 0 28px; }
+  h1 {
+    margin: 0 0 6px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .pot {
+    font-size: 44px;
+    line-height: 1.1;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .pot-sub { margin-top: 4px; color: var(--text-secondary); font-size: 14px; }
+
+  section { margin-bottom: 32px; }
+  h2 {
+    margin: 0 0 12px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .card {
+    background: var(--surface-1);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* ---- settle up ---- */
+  .transfer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .transfer:last-child { border-bottom: 0; }
+  .who { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 26px;
+    padding: 0 8px;
+    border-radius: 6px;
+    background: var(--surface-0);
+    border: 1px solid var(--border-strong);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+  .arrow { color: var(--text-muted); flex: none; }
+  .amount {
+    font-variant-numeric: tabular-nums;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .square { padding: 18px 16px; color: var(--text-secondary); }
+
+  /* ---- diverging bars ---- */
+  .bars { padding: 8px 16px 14px; }
+  .bar-row {
+    display: grid;
+    grid-template-columns: 42px 1fr 1fr 88px;
+    align-items: center;
+    gap: 0 8px;
+    height: 34px;
+    border-radius: 6px;
+  }
+  .bar-row:hover, .bar-row:focus-visible {
+    background: var(--surface-0);
+    outline: none;
+  }
+  .bar-name { font-size: 13px; font-weight: 600; letter-spacing: 0.03em; }
+  .track { position: relative; height: 14px; }
+  .track.left  { border-right: 1px solid var(--axis); }
+  .track.right { border-left: 0; }
+  .bar {
+    position: absolute;
+    top: 0;
+    height: 14px;
+    min-width: 2px;
+  }
+  .bar.neg {
+    right: 2px;                       /* 2px surface gap at the axis */
+    background: var(--neg);
+    border-radius: 4px 0 0 4px;
+  }
+  .bar.pos {
+    left: 2px;
+    background: var(--pos);
+    border-radius: 0 4px 4px 0;
+  }
+  .bar-value {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    font-size: 13px;
+    color: var(--text-primary);
+  }
+  .bar-legend {
+    display: flex;
+    gap: 16px;
+    padding: 6px 16px 0;
+    font-size: 12px;
+    color: var(--text-secondary);
+  }
+  .swatch {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 2px;
+    margin-right: 6px;
+    vertical-align: -1px;
+  }
+  .swatch.pos { background: var(--pos); }
+  .swatch.neg { background: var(--neg); }
+
+  /* ---- table ---- */
+  table { width: 100%; border-collapse: collapse; }
+  th, td {
+    padding: 10px 16px;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    border-bottom: 1px solid var(--border);
+  }
+  th {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-muted);
+    letter-spacing: 0.03em;
+  }
+  th:first-child, td:first-child { text-align: left; font-weight: 600; }
+  tbody tr:last-child td { border-bottom: 0; }
+
+  /* ---- expenses ---- */
+  .expense {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .expense:last-child { border-bottom: 0; }
+  .expense-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .expense-desc { font-weight: 600; }
+  .expense-meta { margin-top: 3px; font-size: 13px; color: var(--text-secondary); }
+  .expense-note {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    border-left: 2px solid var(--border-strong);
+    padding-left: 10px;
+  }
+  .shares {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .share {
+    font-size: 12px;
+    color: var(--text-secondary);
+    background: var(--surface-0);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    padding: 2px 7px;
+    font-variant-numeric: tabular-nums;
+  }
+  .share b { font-weight: 600; color: var(--text-primary); }
+
+  footer {
+    color: var(--text-muted);
+    font-size: 12px;
+    text-align: center;
+    padding-top: 8px;
+    line-height: 1.7;
+  }
+
+  /* ---- tooltip ---- */
+  #tip {
+    position: fixed;
+    z-index: 10;
+    pointer-events: none;
+    background: var(--surface-1);
+    color: var(--text-primary);
+    border: 1px solid var(--border-strong);
+    border-radius: 8px;
+    padding: 8px 10px;
+    font-size: 12px;
+    line-height: 1.6;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  #tip[hidden] { display: none; }
+  #tip .k { color: var(--text-secondary); margin-right: 10px; }
+  #tip .row { display: flex; justify-content: space-between; gap: 10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Spain 2026</h1>
+    <div class="pot" id="pot"></div>
+    <div class="pot-sub" id="pot-sub"></div>
+  </header>
+
+  <section>
+    <h2>Settle up</h2>
+    <div class="card" id="transfers"></div>
+  </section>
+
+  <section>
+    <h2>Where everyone stands</h2>
+    <div class="card">
+      <div class="bars" id="bars"></div>
+      <div class="bar-legend">
+        <span><span class="swatch pos"></span>is owed</span>
+        <span><span class="swatch neg"></span>owes</span>
+      </div>
+      <table>
+        <thead>
+          <tr><th>Who</th><th>Paid</th><th>Share</th><th>Net</th></tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Expenses</h2>
+    <div class="card" id="expenses"></div>
+  </section>
+
+  <footer>
+    <div id="updated"></div>
+    <div>Everyone is shown by initials. Amounts in EUR.</div>
+  </footer>
+</div>
+
+<div id="tip" hidden role="tooltip"></div>
+
+<script type="application/json" id="payload">{"currency": "EUR", "generated": "06 Sep 2026, 08:11 UTC", "expense_count": 2, "total_cents": 1563, "people": ["MZ", "SE", "MN", "JK", "DD"], "balances": {"MZ": {"paid": 1563, "owed": 312, "net": 1251}, "SE": {"paid": 0, "owed": 312, "net": -312}, "MN": {"paid": 0, "owed": 313, "net": -313}, "JK": {"paid": 0, "owed": 313, "net": -313}, "DD": {"paid": 0, "owed": 313, "net": -313}}, "transfers": [{"from": "DD", "to": "MZ", "cents": 313}, {"from": "JK", "to": "MZ", "cents": 313}, {"from": "MN", "to": "MZ", "cents": 313}, {"from": "SE", "to": "MZ", "cents": 312}], "expenses": [{"date": "2026-09-05", "description": "Eggs at Aldi", "location": "Orihuela", "total": 275, "paid_by": {"MZ": 275}, "owed_by": {"MZ": 55, "SE": 55, "MN": 55, "JK": 55, "DD": 55}}, {"date": "2026-09-05", "description": "Groceries at Aldi", "location": "Orihuela", "total": 1288, "paid_by": {"MZ": 1288}, "owed_by": {"MZ": 257, "SE": 257, "MN": 258, "JK": 258, "DD": 258}}]}</script>
+<script>
+(function () {
+  "use strict";
+  var DATA = JSON.parse(document.getElementById("payload").textContent);
+
+  function eur(cents) {
+    var sign = cents < 0 ? "-" : "";
+    var abs = Math.abs(cents);
+    var whole = Math.floor(abs / 100).toLocaleString("en-US");
+    var rest = String(abs % 100).padStart(2, "0");
+    return sign + "€" + whole + "." + rest;
+  }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+
+  // ---- header ----
+  document.getElementById("pot").textContent = eur(DATA.total_cents);
+  document.getElementById("pot-sub").textContent =
+    DATA.expense_count + (DATA.expense_count === 1 ? " expense" : " expenses") +
+    " between " + DATA.people.length + " people";
+
+  // ---- settle up ----
+  var tBox = document.getElementById("transfers");
+  if (!DATA.transfers.length) {
+    tBox.appendChild(el("div", "square", "Nothing to settle — everyone is square."));
+  }
+  DATA.transfers.forEach(function (t) {
+    var row = el("div", "transfer");
+    var who = el("div", "who");
+    who.appendChild(el("span", "chip", t.from));
+    who.appendChild(el("span", "arrow", "→"));
+    who.appendChild(el("span", "chip", t.to));
+    row.appendChild(who);
+    row.appendChild(el("span", "amount", eur(t.cents)));
+    tBox.appendChild(row);
+  });
+
+  // ---- diverging bars ----
+  var nets = DATA.people.map(function (p) { return Math.abs(DATA.balances[p].net); });
+  var scale = Math.max.apply(null, nets.concat([1]));
+  var bars = document.getElementById("bars");
+
+  DATA.people.forEach(function (p) {
+    var b = DATA.balances[p];
+    var pct = (Math.abs(b.net) / scale) * 100;
+
+    var row = el("div", "bar-row");
+    row.tabIndex = 0;
+    row.appendChild(el("div", "bar-name", p));
+
+    var left = el("div", "track left");
+    var right = el("div", "track right");
+    if (b.net < 0) {
+      var nb = el("div", "bar neg");
+      nb.style.width = pct + "%";
+      left.appendChild(nb);
+    } else if (b.net > 0) {
+      var pb = el("div", "bar pos");
+      pb.style.width = pct + "%";
+      right.appendChild(pb);
+    }
+    row.appendChild(left);
+    row.appendChild(right);
+    row.appendChild(el("div", "bar-value", eur(b.net)));
+
+    var label = p + ": paid " + eur(b.paid) + ", share " + eur(b.owed) +
+                ", net " + eur(b.net);
+    row.setAttribute("aria-label", label);
+    row.addEventListener("mouseenter", function (e) { showTip(e, p, b); });
+    row.addEventListener("mousemove", moveTip);
+    row.addEventListener("mouseleave", hideTip);
+    row.addEventListener("focus", function (e) { showTip(e, p, b); });
+    row.addEventListener("blur", hideTip);
+    bars.appendChild(row);
+  });
+
+  // ---- table ----
+  var tbody = document.getElementById("table-body");
+  DATA.people.forEach(function (p) {
+    var b = DATA.balances[p];
+    var tr = el("tr");
+    [p, eur(b.paid), eur(b.owed), eur(b.net)].forEach(function (v, i) {
+      var cell = el(i === 0 ? "th" : "td", null, v);
+      if (i === 0) cell.scope = "row";
+      tr.appendChild(cell);
+    });
+    tbody.appendChild(tr);
+  });
+
+  // ---- expenses ----
+  var box = document.getElementById("expenses");
+  DATA.expenses.slice().reverse().forEach(function (x) {
+    var card = el("div", "expense");
+    var head = el("div", "expense-head");
+    head.appendChild(el("span", "expense-desc", x.description));
+    head.appendChild(el("span", "amount", eur(x.total)));
+    card.appendChild(head);
+
+    var payers = Object.keys(x.paid_by).map(function (n) {
+      return n + " " + eur(x.paid_by[n]);
+    }).join(", ");
+    var meta = [x.date];
+    if (x.location) meta.push(x.location);
+    meta.push("paid by " + payers);
+    card.appendChild(el("div", "expense-meta", meta.join(" · ")));
+
+    if (x.note) card.appendChild(el("div", "expense-note", x.note));
+
+    var shares = el("div", "shares");
+    Object.keys(x.owed_by).forEach(function (n) {
+      var s = el("span", "share");
+      s.appendChild(el("b", null, n));
+      s.appendChild(document.createTextNode(" " + eur(x.owed_by[n])));
+      shares.appendChild(s);
+    });
+    card.appendChild(shares);
+    box.appendChild(card);
+  });
+
+  document.getElementById("updated").textContent = "Updated " + DATA.generated;
+
+  // ---- tooltip ----
+  var tip = document.getElementById("tip");
+  function showTip(e, name, b) {
+    tip.innerHTML = "";
+    tip.appendChild(el("div", null, name));
+    [["paid", b.paid], ["share", b.owed], ["net", b.net]].forEach(function (pair) {
+      var r = el("div", "row");
+      r.appendChild(el("span", "k", pair[0]));
+      r.appendChild(el("span", null, eur(pair[1])));
+      tip.appendChild(r);
+    });
+    tip.hidden = false;
+    position(e.target.getBoundingClientRect().left + 50,
+             e.target.getBoundingClientRect().top);
+  }
+  function moveTip(e) { position(e.clientX + 14, e.clientY + 14); }
+  function position(x, y) {
+    var w = tip.offsetWidth, h = tip.offsetHeight;
+    tip.style.left = Math.min(x, window.innerWidth - w - 8) + "px";
+    tip.style.top = Math.max(8, Math.min(y, window.innerHeight - h - 8)) + "px";
+  }
+  function hideTip() { tip.hidden = true; }
+})();
+</script>
+</body>
+</html>

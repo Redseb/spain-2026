@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "06 Sep 2026, 18:01 UTC",
-  "expense_count": 5,
-  "total_cents": 25158,
+  "generated": "07 Sep 2026, 12:53 UTC",
+  "expense_count": 7,
+  "total_cents": 36176,
   "people": [
     "MZ",
     "SE",
@@ -12,51 +12,51 @@
   ],
   "balances": {
     "MZ": {
-      "paid": 19503,
-      "owed": 4680,
-      "net": 14823
+      "paid": 30521,
+      "owed": 6913,
+      "net": 23608
     },
     "SE": {
       "paid": 0,
-      "owed": 5260,
-      "net": -5260
+      "owed": 7292,
+      "net": -7292
     },
     "MN": {
       "paid": 0,
-      "owed": 4681,
-      "net": -4681
+      "owed": 7440,
+      "net": -7440
     },
     "JK": {
       "paid": 5655,
-      "owed": 5276,
-      "net": 379
+      "owed": 7383,
+      "net": -1728
     },
     "DD": {
       "paid": 0,
-      "owed": 5261,
-      "net": -5261
+      "owed": 7148,
+      "net": -7148
     }
   },
   "transfers": [
     {
-      "from": "DD",
+      "from": "MN",
       "to": "MZ",
-      "cents": 5261
+      "cents": 7440
     },
     {
       "from": "SE",
       "to": "MZ",
-      "cents": 5260
+      "cents": 7292
     },
     {
-      "from": "MN",
+      "from": "DD",
       "to": "MZ",
-      "cents": 4302
+      "cents": 7148
     },
     {
-      "from": "MN",
-      "to": "JK",
-      "cents": 379
+      "from": "JK",
+      "to": "MZ",
+      "cents": 1728
     }
   ],
   "expenses": [
@@ -137,6 +137,38 @@
         "JK": 595,
         "SE": 580,
         "DD": 580
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "description": "Lunch at Restaurante Casablanca",
+      "location": null,
+      "total": 5230,
+      "paid_by": {
+        "MZ": 5230
+      },
+      "owed_by": {
+        "SE": 875,
+        "MN": 1601,
+        "MZ": 1076,
+        "JK": 949,
+        "DD": 729
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "description": "Groceries at Mercadona",
+      "location": "Torrevieja",
+      "total": 5788,
+      "paid_by": {
+        "MZ": 5788
+      },
+      "owed_by": {
+        "MZ": 1157,
+        "SE": 1157,
+        "MN": 1158,
+        "JK": 1158,
+        "DD": 1158
       }
     }
   ]

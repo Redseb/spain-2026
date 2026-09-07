@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "07 Sep 2026, 12:53 UTC",
-  "expense_count": 7,
-  "total_cents": 36176,
+  "generated": "07 Sep 2026, 14:50 UTC",
+  "expense_count": 9,
+  "total_cents": 38316,
   "people": [
     "MZ",
     "SE",
@@ -12,51 +12,51 @@
   ],
   "balances": {
     "MZ": {
-      "paid": 30521,
-      "owed": 6913,
-      "net": 23608
+      "paid": 31311,
+      "owed": 7341,
+      "net": 23970
     },
     "SE": {
       "paid": 0,
-      "owed": 7292,
-      "net": -7292
+      "owed": 7720,
+      "net": -7720
     },
     "MN": {
-      "paid": 0,
-      "owed": 7440,
-      "net": -7440
+      "paid": 1350,
+      "owed": 7868,
+      "net": -6518
     },
     "JK": {
       "paid": 5655,
-      "owed": 7383,
-      "net": -1728
+      "owed": 7811,
+      "net": -2156
     },
     "DD": {
       "paid": 0,
-      "owed": 7148,
-      "net": -7148
+      "owed": 7576,
+      "net": -7576
     }
   },
   "transfers": [
     {
-      "from": "MN",
-      "to": "MZ",
-      "cents": 7440
-    },
-    {
       "from": "SE",
       "to": "MZ",
-      "cents": 7292
+      "cents": 7720
     },
     {
       "from": "DD",
       "to": "MZ",
-      "cents": 7148
+      "cents": 7576
+    },
+    {
+      "from": "MN",
+      "to": "MZ",
+      "cents": 6518
     },
     {
       "from": "JK",
       "to": "MZ",
-      "cents": 1728
+      "cents": 2156
     }
   ],
   "expenses": [
@@ -137,6 +137,38 @@
         "JK": 595,
         "SE": 580,
         "DD": 580
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "description": "Elevator tickets up to the castle",
+      "location": "Alicante",
+      "total": 1350,
+      "paid_by": {
+        "MN": 1350
+      },
+      "owed_by": {
+        "MZ": 270,
+        "SE": 270,
+        "MN": 270,
+        "JK": 270,
+        "DD": 270
+      }
+    },
+    {
+      "date": "2026-09-07",
+      "description": "Parking",
+      "location": "Alicante",
+      "total": 790,
+      "paid_by": {
+        "MZ": 790
+      },
+      "owed_by": {
+        "MZ": 158,
+        "SE": 158,
+        "MN": 158,
+        "JK": 158,
+        "DD": 158
       }
     },
     {

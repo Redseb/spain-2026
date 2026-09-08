@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "07 Sep 2026, 14:50 UTC",
-  "expense_count": 9,
-  "total_cents": 38316,
+  "generated": "08 Sep 2026, 19:56 UTC",
+  "expense_count": 10,
+  "total_cents": 39096,
   "people": [
     "MZ",
     "SE",
@@ -12,51 +12,51 @@
   ],
   "balances": {
     "MZ": {
-      "paid": 31311,
-      "owed": 7341,
-      "net": 23970
+      "paid": 32091,
+      "owed": 7497,
+      "net": 24594
     },
     "SE": {
       "paid": 0,
-      "owed": 7720,
-      "net": -7720
+      "owed": 7876,
+      "net": -7876
     },
     "MN": {
       "paid": 1350,
-      "owed": 7868,
-      "net": -6518
+      "owed": 8024,
+      "net": -6674
     },
     "JK": {
       "paid": 5655,
-      "owed": 7811,
-      "net": -2156
+      "owed": 7967,
+      "net": -2312
     },
     "DD": {
       "paid": 0,
-      "owed": 7576,
-      "net": -7576
+      "owed": 7732,
+      "net": -7732
     }
   },
   "transfers": [
     {
       "from": "SE",
       "to": "MZ",
-      "cents": 7720
+      "cents": 7876
     },
     {
       "from": "DD",
       "to": "MZ",
-      "cents": 7576
+      "cents": 7732
     },
     {
       "from": "MN",
       "to": "MZ",
-      "cents": 6518
+      "cents": 6674
     },
     {
       "from": "JK",
       "to": "MZ",
-      "cents": 2156
+      "cents": 2312
     }
   ],
   "expenses": [
@@ -201,6 +201,22 @@
         "MN": 1158,
         "JK": 1158,
         "DD": 1158
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "description": "Drinks",
+      "location": "La Zenia",
+      "total": 780,
+      "paid_by": {
+        "MZ": 780
+      },
+      "owed_by": {
+        "MZ": 156,
+        "SE": 156,
+        "MN": 156,
+        "JK": 156,
+        "DD": 156
       }
     }
   ]

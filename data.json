@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "08 Sep 2026, 19:56 UTC",
-  "expense_count": 10,
-  "total_cents": 39096,
+  "generated": "08 Sep 2026, 20:51 UTC",
+  "expense_count": 11,
+  "total_cents": 40296,
   "people": [
     "MZ",
     "SE",
@@ -22,9 +22,9 @@
       "net": -7876
     },
     "MN": {
-      "paid": 1350,
-      "owed": 8024,
-      "net": -6674
+      "paid": 2550,
+      "owed": 8624,
+      "net": -6074
     },
     "JK": {
       "paid": 5655,
@@ -33,25 +33,25 @@
     },
     "DD": {
       "paid": 0,
-      "owed": 7732,
-      "net": -7732
+      "owed": 8332,
+      "net": -8332
     }
   },
   "transfers": [
+    {
+      "from": "DD",
+      "to": "MZ",
+      "cents": 8332
+    },
     {
       "from": "SE",
       "to": "MZ",
       "cents": 7876
     },
     {
-      "from": "DD",
-      "to": "MZ",
-      "cents": 7732
-    },
-    {
       "from": "MN",
       "to": "MZ",
-      "cents": 6674
+      "cents": 6074
     },
     {
       "from": "JK",
@@ -217,6 +217,19 @@
         "MN": 156,
         "JK": 156,
         "DD": 156
+      }
+    },
+    {
+      "date": "2026-09-08",
+      "description": "Pizza",
+      "location": null,
+      "total": 1200,
+      "paid_by": {
+        "MN": 1200
+      },
+      "owed_by": {
+        "MN": 600,
+        "DD": 600
       }
     }
   ]

@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "09 Sep 2026, 11:58 UTC",
-  "expense_count": 12,
-  "total_cents": 41096,
+  "generated": "09 Sep 2026, 13:39 UTC",
+  "expense_count": 15,
+  "total_cents": 41773,
   "people": [
     "MZ",
     "SE",
@@ -12,51 +12,51 @@
   ],
   "balances": {
     "MZ": {
-      "paid": 32891,
-      "owed": 7697,
-      "net": 25194
+      "paid": 33276,
+      "owed": 7774,
+      "net": 25502
     },
     "SE": {
-      "paid": 0,
-      "owed": 8076,
-      "net": -8076
+      "paid": 45,
+      "owed": 8263,
+      "net": -8218
     },
     "MN": {
-      "paid": 2550,
-      "owed": 8824,
-      "net": -6274
+      "paid": 2797,
+      "owed": 9083,
+      "net": -6286
     },
     "JK": {
       "paid": 5655,
-      "owed": 7967,
-      "net": -2312
+      "owed": 8044,
+      "net": -2389
     },
     "DD": {
       "paid": 0,
-      "owed": 8532,
-      "net": -8532
+      "owed": 8609,
+      "net": -8609
     }
   },
   "transfers": [
     {
       "from": "DD",
       "to": "MZ",
-      "cents": 8532
+      "cents": 8609
     },
     {
       "from": "SE",
       "to": "MZ",
-      "cents": 8076
+      "cents": 8218
     },
     {
       "from": "MN",
       "to": "MZ",
-      "cents": 6274
+      "cents": 6286
     },
     {
       "from": "JK",
       "to": "MZ",
-      "cents": 2312
+      "cents": 2389
     }
   ],
   "expenses": [
@@ -230,6 +230,47 @@
       "owed_by": {
         "MN": 600,
         "DD": 600
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "description": "Bread",
+      "location": null,
+      "total": 45,
+      "paid_by": {
+        "SE": 45
+      },
+      "owed_by": {
+        "MN": 45
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "description": "Parking",
+      "location": "Cartagena",
+      "total": 385,
+      "paid_by": {
+        "MZ": 385
+      },
+      "owed_by": {
+        "MZ": 77,
+        "SE": 77,
+        "MN": 77,
+        "JK": 77,
+        "DD": 77
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "description": "Jamón and banana at Mercadona",
+      "location": "Torrevieja",
+      "total": 247,
+      "paid_by": {
+        "MN": 247
+      },
+      "owed_by": {
+        "MN": 137,
+        "SE": 110
       }
     },
     {

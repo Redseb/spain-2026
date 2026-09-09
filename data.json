@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "08 Sep 2026, 20:51 UTC",
-  "expense_count": 11,
-  "total_cents": 40296,
+  "generated": "09 Sep 2026, 11:58 UTC",
+  "expense_count": 12,
+  "total_cents": 41096,
   "people": [
     "MZ",
     "SE",
@@ -12,19 +12,19 @@
   ],
   "balances": {
     "MZ": {
-      "paid": 32091,
-      "owed": 7497,
-      "net": 24594
+      "paid": 32891,
+      "owed": 7697,
+      "net": 25194
     },
     "SE": {
       "paid": 0,
-      "owed": 7876,
-      "net": -7876
+      "owed": 8076,
+      "net": -8076
     },
     "MN": {
       "paid": 2550,
-      "owed": 8624,
-      "net": -6074
+      "owed": 8824,
+      "net": -6274
     },
     "JK": {
       "paid": 5655,
@@ -33,25 +33,25 @@
     },
     "DD": {
       "paid": 0,
-      "owed": 8332,
-      "net": -8332
+      "owed": 8532,
+      "net": -8532
     }
   },
   "transfers": [
     {
       "from": "DD",
       "to": "MZ",
-      "cents": 8332
+      "cents": 8532
     },
     {
       "from": "SE",
       "to": "MZ",
-      "cents": 7876
+      "cents": 8076
     },
     {
       "from": "MN",
       "to": "MZ",
-      "cents": 6074
+      "cents": 6274
     },
     {
       "from": "JK",
@@ -230,6 +230,21 @@
       "owed_by": {
         "MN": 600,
         "DD": 600
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "description": "Slushees",
+      "location": null,
+      "total": 800,
+      "paid_by": {
+        "MZ": 800
+      },
+      "owed_by": {
+        "MZ": 200,
+        "MN": 200,
+        "DD": 200,
+        "SE": 200
       }
     }
   ]

@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "09 Sep 2026, 13:39 UTC",
-  "expense_count": 15,
-  "total_cents": 41773,
+  "generated": "09 Sep 2026, 15:14 UTC",
+  "expense_count": 16,
+  "total_cents": 48558,
   "people": [
     "MZ",
     "SE",
@@ -13,50 +13,50 @@
   "balances": {
     "MZ": {
       "paid": 33276,
-      "owed": 7774,
-      "net": 25502
+      "owed": 9289,
+      "net": 23987
     },
     "SE": {
       "paid": 45,
-      "owed": 8263,
-      "net": -8218
+      "owed": 9653,
+      "net": -9608
     },
     "MN": {
-      "paid": 2797,
-      "owed": 9083,
-      "net": -6286
+      "paid": 9582,
+      "owed": 10253,
+      "net": -671
     },
     "JK": {
       "paid": 5655,
-      "owed": 8044,
-      "net": -2389
+      "owed": 9214,
+      "net": -3559
     },
     "DD": {
       "paid": 0,
-      "owed": 8609,
-      "net": -8609
+      "owed": 10149,
+      "net": -10149
     }
   },
   "transfers": [
     {
       "from": "DD",
       "to": "MZ",
-      "cents": 8609
+      "cents": 10149
     },
     {
       "from": "SE",
       "to": "MZ",
-      "cents": 8218
-    },
-    {
-      "from": "MN",
-      "to": "MZ",
-      "cents": 6286
+      "cents": 9608
     },
     {
       "from": "JK",
       "to": "MZ",
-      "cents": 2389
+      "cents": 3559
+    },
+    {
+      "from": "MN",
+      "to": "MZ",
+      "cents": 671
     }
   ],
   "expenses": [
@@ -286,6 +286,22 @@
         "MN": 200,
         "DD": 200,
         "SE": 200
+      }
+    },
+    {
+      "date": "2026-09-09",
+      "description": "Dinner at Tide & Taste",
+      "location": "Cartagena",
+      "total": 6785,
+      "paid_by": {
+        "MN": 6785
+      },
+      "owed_by": {
+        "MZ": 1515,
+        "MN": 1170,
+        "JK": 1170,
+        "SE": 1390,
+        "DD": 1540
       }
     }
   ]

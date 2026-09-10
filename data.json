@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "09 Sep 2026, 15:14 UTC",
-  "expense_count": 16,
-  "total_cents": 48558,
+  "generated": "10 Sep 2026, 12:18 UTC",
+  "expense_count": 17,
+  "total_cents": 49073,
   "people": [
     "MZ",
     "SE",
@@ -12,51 +12,51 @@
   ],
   "balances": {
     "MZ": {
-      "paid": 33276,
-      "owed": 9289,
-      "net": 23987
+      "paid": 33791,
+      "owed": 9392,
+      "net": 24399
     },
     "SE": {
       "paid": 45,
-      "owed": 9653,
-      "net": -9608
+      "owed": 9756,
+      "net": -9711
     },
     "MN": {
       "paid": 9582,
-      "owed": 10253,
-      "net": -671
+      "owed": 10356,
+      "net": -774
     },
     "JK": {
       "paid": 5655,
-      "owed": 9214,
-      "net": -3559
+      "owed": 9317,
+      "net": -3662
     },
     "DD": {
       "paid": 0,
-      "owed": 10149,
-      "net": -10149
+      "owed": 10252,
+      "net": -10252
     }
   },
   "transfers": [
     {
       "from": "DD",
       "to": "MZ",
-      "cents": 10149
+      "cents": 10252
     },
     {
       "from": "SE",
       "to": "MZ",
-      "cents": 9608
+      "cents": 9711
     },
     {
       "from": "JK",
       "to": "MZ",
-      "cents": 3559
+      "cents": 3662
     },
     {
       "from": "MN",
       "to": "MZ",
-      "cents": 671
+      "cents": 774
     }
   ],
   "expenses": [
@@ -302,6 +302,22 @@
         "JK": 1170,
         "SE": 1390,
         "DD": 1540
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "description": "Parking",
+      "location": "Torrevieja",
+      "total": 515,
+      "paid_by": {
+        "MZ": 515
+      },
+      "owed_by": {
+        "MZ": 103,
+        "SE": 103,
+        "MN": 103,
+        "JK": 103,
+        "DD": 103
       }
     }
   ]

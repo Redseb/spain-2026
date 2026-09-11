@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "11 Sep 2026, 16:00 UTC",
-  "expense_count": 21,
-  "total_cents": 59738,
+  "generated": "11 Sep 2026, 20:42 UTC",
+  "expense_count": 22,
+  "total_cents": 66561,
   "people": [
     "MZ",
     "SE",
@@ -12,51 +12,51 @@
   ],
   "balances": {
     "MZ": {
-      "paid": 42221,
-      "owed": 11512,
-      "net": 30709
+      "paid": 49044,
+      "owed": 12876,
+      "net": 36168
     },
     "SE": {
       "paid": 45,
-      "owed": 11246,
-      "net": -11201
+      "owed": 12610,
+      "net": -12565
     },
     "MN": {
       "paid": 11817,
-      "owed": 13786,
-      "net": -1969
+      "owed": 15151,
+      "net": -3334
     },
     "JK": {
       "paid": 5655,
-      "owed": 11602,
-      "net": -5947
+      "owed": 12967,
+      "net": -7312
     },
     "DD": {
       "paid": 0,
-      "owed": 11592,
-      "net": -11592
+      "owed": 12957,
+      "net": -12957
     }
   },
   "transfers": [
     {
       "from": "DD",
       "to": "MZ",
-      "cents": 11592
+      "cents": 12957
     },
     {
       "from": "SE",
       "to": "MZ",
-      "cents": 11201
+      "cents": 12565
     },
     {
       "from": "JK",
       "to": "MZ",
-      "cents": 5947
+      "cents": 7312
     },
     {
       "from": "MN",
       "to": "MZ",
-      "cents": 1969
+      "cents": 3334
     }
   ],
   "expenses": [
@@ -351,6 +351,22 @@
         "DD": 250
       },
       "note": "The birthday person did not chip in."
+    },
+    {
+      "date": "2026-09-11",
+      "description": "Fuel",
+      "location": null,
+      "total": 6823,
+      "paid_by": {
+        "MZ": 6823
+      },
+      "owed_by": {
+        "MZ": 1364,
+        "SE": 1364,
+        "MN": 1365,
+        "JK": 1365,
+        "DD": 1365
+      }
     },
     {
       "date": "2026-09-11",

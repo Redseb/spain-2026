@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "11 Sep 2026, 08:41 UTC",
-  "expense_count": 18,
-  "total_cents": 55423,
+  "generated": "11 Sep 2026, 11:19 UTC",
+  "expense_count": 19,
+  "total_cents": 56423,
   "people": [
     "MZ",
     "SE",
@@ -12,9 +12,9 @@
   ],
   "balances": {
     "MZ": {
-      "paid": 40141,
-      "owed": 10742,
-      "net": 29399
+      "paid": 41141,
+      "owed": 10992,
+      "net": 30149
     },
     "SE": {
       "paid": 45,
@@ -23,25 +23,25 @@
     },
     "MN": {
       "paid": 9582,
-      "owed": 11706,
-      "net": -2124
+      "owed": 11956,
+      "net": -2374
     },
     "JK": {
       "paid": 5655,
-      "owed": 10667,
-      "net": -5012
+      "owed": 10917,
+      "net": -5262
     },
     "DD": {
       "paid": 0,
-      "owed": 11202,
-      "net": -11202
+      "owed": 11452,
+      "net": -11452
     }
   },
   "transfers": [
     {
       "from": "DD",
       "to": "MZ",
-      "cents": 11202
+      "cents": 11452
     },
     {
       "from": "SE",
@@ -51,12 +51,12 @@
     {
       "from": "JK",
       "to": "MZ",
-      "cents": 5012
+      "cents": 5262
     },
     {
       "from": "MN",
       "to": "MZ",
-      "cents": 2124
+      "cents": 2374
     }
   ],
   "expenses": [
@@ -335,6 +335,22 @@
         "JK": 103,
         "DD": 103
       }
+    },
+    {
+      "date": "2026-09-11",
+      "description": "Birthday cake",
+      "location": null,
+      "total": 1000,
+      "paid_by": {
+        "MZ": 1000
+      },
+      "owed_by": {
+        "MZ": 250,
+        "MN": 250,
+        "JK": 250,
+        "DD": 250
+      },
+      "note": "The birthday person did not chip in."
     }
   ]
 }

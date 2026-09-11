@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "10 Sep 2026, 12:18 UTC",
-  "expense_count": 17,
-  "total_cents": 49073,
+  "generated": "11 Sep 2026, 08:41 UTC",
+  "expense_count": 18,
+  "total_cents": 55423,
   "people": [
     "MZ",
     "SE",
@@ -12,51 +12,51 @@
   ],
   "balances": {
     "MZ": {
-      "paid": 33791,
-      "owed": 9392,
-      "net": 24399
+      "paid": 40141,
+      "owed": 10742,
+      "net": 29399
     },
     "SE": {
       "paid": 45,
-      "owed": 9756,
-      "net": -9711
+      "owed": 11106,
+      "net": -11061
     },
     "MN": {
       "paid": 9582,
-      "owed": 10356,
-      "net": -774
+      "owed": 11706,
+      "net": -2124
     },
     "JK": {
       "paid": 5655,
-      "owed": 9317,
-      "net": -3662
+      "owed": 10667,
+      "net": -5012
     },
     "DD": {
       "paid": 0,
-      "owed": 10252,
-      "net": -10252
+      "owed": 11202,
+      "net": -11202
     }
   },
   "transfers": [
     {
       "from": "DD",
       "to": "MZ",
-      "cents": 10252
+      "cents": 11202
     },
     {
       "from": "SE",
       "to": "MZ",
-      "cents": 9711
+      "cents": 11061
     },
     {
       "from": "JK",
       "to": "MZ",
-      "cents": 3662
+      "cents": 5012
     },
     {
       "from": "MN",
       "to": "MZ",
-      "cents": 774
+      "cents": 2124
     }
   ],
   "expenses": [
@@ -302,6 +302,22 @@
         "JK": 1170,
         "SE": 1390,
         "DD": 1540
+      }
+    },
+    {
+      "date": "2026-09-10",
+      "description": "Dinner at La Griega",
+      "location": "Torrevieja",
+      "total": 6350,
+      "paid_by": {
+        "MZ": 6350
+      },
+      "owed_by": {
+        "MZ": 1350,
+        "SE": 1350,
+        "MN": 1350,
+        "JK": 1350,
+        "DD": 950
       }
     },
     {

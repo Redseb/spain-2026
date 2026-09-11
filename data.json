@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "11 Sep 2026, 11:22 UTC",
-  "expense_count": 20,
-  "total_cents": 57503,
+  "generated": "11 Sep 2026, 16:00 UTC",
+  "expense_count": 21,
+  "total_cents": 59738,
   "people": [
     "MZ",
     "SE",
@@ -22,14 +22,14 @@
       "net": -11201
     },
     "MN": {
-      "paid": 9582,
-      "owed": 12096,
-      "net": -2514
+      "paid": 11817,
+      "owed": 13786,
+      "net": -1969
     },
     "JK": {
       "paid": 5655,
-      "owed": 11057,
-      "net": -5402
+      "owed": 11602,
+      "net": -5947
     },
     "DD": {
       "paid": 0,
@@ -51,12 +51,12 @@
     {
       "from": "JK",
       "to": "MZ",
-      "cents": 5402
+      "cents": 5947
     },
     {
       "from": "MN",
       "to": "MZ",
-      "cents": 2514
+      "cents": 1969
     }
   ],
   "expenses": [
@@ -366,6 +366,19 @@
         "MN": 140,
         "JK": 140,
         "DD": 140
+      }
+    },
+    {
+      "date": "2026-09-11",
+      "description": "Lunch at Tide & Taste",
+      "location": "Cartagena",
+      "total": 2235,
+      "paid_by": {
+        "MN": 2235
+      },
+      "owed_by": {
+        "MN": 1690,
+        "JK": 545
       }
     }
   ]

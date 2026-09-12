@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "12 Sep 2026, 13:20 UTC",
-  "expense_count": 23,
-  "total_cents": 68276,
+  "generated": "12 Sep 2026, 13:37 UTC",
+  "expense_count": 24,
+  "total_cents": 68491,
   "people": [
     "MZ",
     "SE",
@@ -13,8 +13,8 @@
   "balances": {
     "MZ": {
       "paid": 50759,
-      "owed": 14016,
-      "net": 36743
+      "owed": 14123,
+      "net": 36636
     },
     "SE": {
       "paid": 45,
@@ -23,13 +23,13 @@
     },
     "MN": {
       "paid": 11817,
-      "owed": 15726,
-      "net": -3909
+      "owed": 15834,
+      "net": -4017
     },
     "JK": {
-      "paid": 5655,
+      "paid": 5870,
       "owed": 12967,
-      "net": -7312
+      "net": -7097
     },
     "DD": {
       "paid": 0,
@@ -51,12 +51,12 @@
     {
       "from": "JK",
       "to": "MZ",
-      "cents": 7312
+      "cents": 7097
     },
     {
       "from": "MN",
       "to": "MZ",
-      "cents": 3909
+      "cents": 4017
     }
   ],
   "expenses": [
@@ -395,6 +395,19 @@
       "owed_by": {
         "MN": 1690,
         "JK": 545
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "description": "Coca Cola",
+      "location": null,
+      "total": 215,
+      "paid_by": {
+        "JK": 215
+      },
+      "owed_by": {
+        "MZ": 107,
+        "MN": 108
       }
     },
     {

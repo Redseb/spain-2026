@@ -1,8 +1,8 @@
 {
   "currency": "EUR",
-  "generated": "11 Sep 2026, 20:42 UTC",
-  "expense_count": 22,
-  "total_cents": 66561,
+  "generated": "12 Sep 2026, 13:20 UTC",
+  "expense_count": 23,
+  "total_cents": 68276,
   "people": [
     "MZ",
     "SE",
@@ -12,9 +12,9 @@
   ],
   "balances": {
     "MZ": {
-      "paid": 49044,
-      "owed": 12876,
-      "net": 36168
+      "paid": 50759,
+      "owed": 14016,
+      "net": 36743
     },
     "SE": {
       "paid": 45,
@@ -23,8 +23,8 @@
     },
     "MN": {
       "paid": 11817,
-      "owed": 15151,
-      "net": -3334
+      "owed": 15726,
+      "net": -3909
     },
     "JK": {
       "paid": 5655,
@@ -56,7 +56,7 @@
     {
       "from": "MN",
       "to": "MZ",
-      "cents": 3334
+      "cents": 3909
     }
   ],
   "expenses": [
@@ -395,6 +395,19 @@
       "owed_by": {
         "MN": 1690,
         "JK": 545
+      }
+    },
+    {
+      "date": "2026-09-12",
+      "description": "Groceries at Mercadona",
+      "location": "Torrevieja",
+      "total": 1715,
+      "paid_by": {
+        "MZ": 1715
+      },
+      "owed_by": {
+        "MZ": 1140,
+        "MN": 575
       }
     }
   ]
